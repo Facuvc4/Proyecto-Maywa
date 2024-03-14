@@ -39,13 +39,33 @@ function moveToLeft() {
 //Esto es la parte de la ventana modal de los vinos malbec y blanco
 
 const imageMalbec = document.querySelector("#image-malbec"),
+      imageBlanco = document.querySelector("#image-blanco"),
       descriptionWine = document.querySelector(".description-wine"),
-      close = document.querySelector("#close");
+      closeMalbec = document.querySelector("#closeMalbec"),
+      closeBlanco = document.querySelector("#closeBlanco"),
+      Malbec = document.querySelector(".description-wine-malbec"),
+      Blanco = document.querySelector(".description-wine-blanco");
 
 imageMalbec.addEventListener("click",()=> {
   descriptionWine.style.transform = "scale(1)";
+  Malbec.style.transform = "scale(1)";
+  Malbec.style.display = "flex";
+  Blanco.style.display = "none";
 })
 
-close.addEventListener("click",()=> {
+imageBlanco.addEventListener("click",()=> {
+  descriptionWine.style.transform = "scale(1)";
+  Blanco.style.transform = "scale(1)";
+  Blanco.style.display = "flex";
+  Malbec.style.display = "none";
+})
+
+closeBlanco.addEventListener("click",()=> {
   descriptionWine.style.transform = "scale(0)";
+  Blanco.style.transform = "scale(0)";
+})
+
+closeMalbec.addEventListener("click",()=> {
+  descriptionWine.style.transform = "scale(0)";
+  Malbec.style.transform = "scale(0)";
 })
